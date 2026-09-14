@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Travel Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1>AI Travel Planner</h1>
+      <p class="tagline">Four AI travel specialists research your chosen regions in parallel, and a senior consultant hands you one confident, ready-to-book recommendation.</p>
+    </div>
+  </header>
+
+  <nav class="tab-bar">
+    <button type="button" class="tab-btn active" data-tab="plan-tab">Plan a Trip</button>
+    <button type="button" class="tab-btn" data-tab="log-tab">Decision Log</button>
+  </nav>
+
+  <main class="container">
+    <section id="plan-tab" class="tab-panel active">
+      <section id="form-section" class="card">
+        <form id="trip-form">
+          <div class="field-row datepicker-field">
+            <label for="start_date">Start date</label>
+            <input type="text" id="start_date" name="start_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required />
+          </div>
+          <div class="field-row datepicker-field">
+            <label for="end_date">End date</label>
+            <input type="text" id="end_date" name="end_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required />
+          </div>
+          <div class="field-row">
+            <label for="travelers">Travelers</label>
+            <input type="number" id="travelers" name="travelers" min="1" value="2" required />
+          </div>
+          <div class="field-row">
+            <label for="budget_per_person">Budget per person</label>
+            <input type="number" id="budget_per_person" name="budget_per_person" min="1" value="2000" required />
+          </div>
+          <div class="field-row">
+            <label for="currency">Currency</label>
+            <select id="currency" name="currency">
+              <option value="USD" selected>USD</option>
+              <option value="SGD">SGD</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label>Preferred regions (choose 1-4)</label>
+            <div id="region-rows"></div>
+            <button type="button" id="add-region-btn" class="secondary-btn">+ Add region</button>
+          </div>
+          <button type="submit" id="submit-btn" class="primary-btn">Plan My Trip</button>
+        </form>
+      </section>
+
+      <section id="loading-section" class="card hidden">
+        <div class="spinner"></div>
+        <p>AI is researching your chosen regions in parallel - this usually takes a few minutes.</p>
+      </section>
+
+      <section id="error-section" class="card hidden">
+        <p id="error-message" class="error-text"></p>
+        <button id="retry-btn" class="primary-btn">Try Again</button>
+      </section>
+
+      <section id="result-section" class="card hidden">
+        <h2>Recommendation: <span id="result-region"></span></h2>
+        <h3 id="result-destination"></h3>
+        <p id="result-reasoning" class="reasoning"></p>
+        <p class="cost-line">Estimated cost per person: <span id="result-cost"></span></p>
+
+        <h4>Day-by-Day Itinerary</h4>
+        <div id="result-itinerary"></div>
+
+        <h4>Region Verdicts</h4>
+        <ul id="result-summaries"></ul>
+
+        <div class="actions">
+          <button type="button" id="view-log-btn" class="secondary-btn">View Decision Log</button>
+          <button type="button" id="new-plan-btn" class="primary-btn">Plan Another Trip</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="log-tab" class="tab-panel">
+      <p class="log-intro">This is the decision log - who decided what, in what order.</p>
+
+      <section id="log-empty" class="card">
+        <p>Run a trip plan first, then come back here to see the full AI decision log.</p>
+      </section>
+
+      <section id="log-loading" class="card hidden">
+        <p>Loading decision log...</p>
+      </section>
+
+      <section id="log-error" class="card hidden">
+        <p id="log-error-message" class="error-text"></p>
+      </section>
+
+      <div id="trace-groups"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

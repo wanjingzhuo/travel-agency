@@ -1,0 +1,461 @@
+:root {
+  --color-navy: #0d3350;
+  --color-navy-dark: #082439;
+  --color-gold: #c8963e;
+  --color-gold-dark: #a97a2e;
+  --color-bg: #f6f3ec;
+  --color-card: #ffffff;
+  --color-text: #24292c;
+  --color-text-muted: #5c6770;
+  --color-border: #e0d9c8;
+  --color-error: #b3261e;
+  --color-success: #2e7d5b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0 0 4rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+/* ---------- header / hero ---------- */
+
+.page-header {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  border-bottom: 4px solid var(--color-gold);
+  padding: 3rem 1.5rem 2.5rem;
+}
+
+.header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.page-header h1 {
+  margin: 0 0 0.75rem;
+  color: #ffffff;
+  font-size: 2.75rem;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  color: #e7ecf1;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  max-width: 620px;
+}
+
+/* ---------- tabs ---------- */
+
+.tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+  background: var(--color-card);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 1.1rem 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  color: var(--color-navy);
+}
+
+.tab-btn.active {
+  color: var(--color-navy);
+  border-bottom-color: var(--color-gold);
+  font-weight: 700;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.log-intro {
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 1.75rem 0 1.25rem;
+  font-size: 1.1rem;
+}
+
+/* ---------- layout ---------- */
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 10px rgba(13, 51, 80, 0.08);
+  border: 1px solid var(--color-border);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- form ---------- */
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.field-row label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: var(--color-navy);
+}
+
+.field-row input,
+.field-row select {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #c9c2b0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  color: var(--color-text);
+  background: #fff;
+}
+
+.field-row input:focus,
+.field-row select:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 1px;
+}
+
+.region-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.region-row select {
+  flex: 1;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #c9c2b0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+}
+
+.region-remove {
+  background: #fff;
+  color: var(--color-error);
+  border: 1px solid #c9c2b0;
+  border-radius: 6px;
+  padding: 0 0.9rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.region-remove:hover {
+  background: #fdf1f0;
+}
+
+/* ---------- buttons ---------- */
+
+.primary-btn {
+  background: var(--color-navy);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.85rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--color-navy-dark);
+}
+
+.secondary-btn {
+  background: #fff;
+  color: var(--color-gold-dark);
+  border: 1.5px solid var(--color-gold);
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #fbf3e6;
+}
+
+.secondary-btn:disabled {
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+  background: #fff;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---------- date picker ---------- */
+
+.datepicker-field {
+  position: relative;
+}
+
+.datepicker-field input {
+  cursor: pointer;
+  background: #fff;
+}
+
+.datepicker-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.3rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(13, 51, 80, 0.18);
+  padding: 0.85rem;
+  z-index: 20;
+  width: 280px;
+}
+
+.datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.datepicker-nav {
+  background: none;
+  color: var(--color-navy);
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.datepicker-nav:hover {
+  background: #eef3f7;
+  border-radius: 4px;
+}
+
+.datepicker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.datepicker-weekdays span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.datepicker-day {
+  background: none;
+  color: var(--color-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.datepicker-day:hover {
+  background: #eef3f7;
+}
+
+.datepicker-day.selected {
+  background: var(--color-navy);
+  color: #fff;
+}
+
+/* ---------- loading / error ---------- */
+
+.spinner {
+  width: 46px;
+  height: 46px;
+  border: 4px solid #dbe7ef;
+  border-top-color: var(--color-navy);
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading-section,
+#error-section {
+  text-align: center;
+}
+
+.error-text {
+  color: var(--color-error);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* ---------- results ---------- */
+
+#result-section h2 {
+  color: var(--color-navy);
+  margin-top: 0;
+  font-size: 1.9rem;
+}
+
+#result-section h3 {
+  margin-top: 0;
+  color: var(--color-gold-dark);
+  font-size: 1.4rem;
+}
+
+#result-section h4 {
+  color: var(--color-navy);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.4rem;
+}
+
+.reasoning {
+  color: var(--color-text);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.cost-line {
+  font-weight: 700;
+  color: var(--color-navy);
+  font-size: 1.1rem;
+}
+
+#result-itinerary ol {
+  padding-left: 1.4rem;
+}
+
+#result-itinerary li {
+  margin-bottom: 0.5rem;
+}
+
+#result-summaries {
+  list-style: none;
+  padding-left: 0;
+}
+
+#result-summaries li {
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 3px solid var(--color-gold);
+  margin-bottom: 0.6rem;
+  background: #fbf9f4;
+  border-radius: 0 6px 6px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+/* ---------- decision log ---------- */
+
+.trace-agent h2 {
+  margin-top: 0;
+  color: var(--color-navy);
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.trace-step {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 1rem;
+}
+
+.trace-step p {
+  margin: 0.25rem 0;
+}
+
+.thought {
+  color: var(--color-text);
+}
+
+.action {
+  color: #6d4fa8;
+}
+
+.trace-final {
+  margin-top: 0.85rem;
+}
+
+.trace-final summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-success);
+  font-size: 1.05rem;
+}
+
+.trace-final pre {
+  background: #f8f7f2;
+  padding: 0.85rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.9rem;
+}
